@@ -1,0 +1,16 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/DocumentComposition.Api/DocumentComposition.Api.csproj" />
+    <Project Path="src/DocumentComposition.Application/DocumentComposition.Application.csproj" />
+    <Project Path="src/DocumentComposition.Domain/DocumentComposition.Domain.csproj" />
+    <Project Path="src/DocumentComposition.Infrastructure/DocumentComposition.Infrastructure.csproj" />
+    <Project Path="src/DocumentComposition.Shared/DocumentComposition.Shared.csproj" />
+    <Project Path="src/DocumentComposition.Worker/DocumentComposition.Worker.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/DocumentComposition.Api.Tests/DocumentComposition.Api.Tests.csproj" />
+    <Project Path="tests/DocumentComposition.Application.Tests/DocumentComposition.Application.Tests.csproj" />
+    <Project Path="tests/DocumentComposition.Domain.Tests/DocumentComposition.Domain.Tests.csproj" />
+    <Project Path="tests/DocumentComposition.Infrastructure.Tests/DocumentComposition.Infrastructure.Tests.csproj" />
+  </Folder>
+</Solution>
