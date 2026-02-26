@@ -24,7 +24,7 @@ The Binder aggregate is the root, the Documents belong to a Binder and cannot ex
 | Documents | Collection of `Documents` |
 | CreatedAt | `DateTime` |
 | ExpiresAt | `DateTime` |
-| OutputUri | `Uri` |
+| OutputUri | `StorageUri` |
 
 
 ### Invariants
@@ -69,8 +69,8 @@ A Document represents a single source document that will be normalized and compo
 |------|------|
 | Id | `PageId` |
 | Order | `DocumentOrder` |
-| SourceUri | `Uri` |
-| MimeType | `string` |
+| SourceUri | `StorageUri` |
+| MimeType | `ContentType` |
 | UploadedAt | `DateTime` |
 
 # Invariants
