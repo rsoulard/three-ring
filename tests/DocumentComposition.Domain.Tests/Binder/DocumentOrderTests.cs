@@ -77,4 +77,14 @@ public class DocumentOrderTests
         Assert.False(documentOrder1.Equals(documentOrder2));
         Assert.NotEqual(documentOrder1.GetHashCode(), documentOrder2.GetHashCode());
     }
+
+    [Fact]
+    public void ToString_ShouldReturnUnderlyingInt()
+    {
+        var documentOrder = DocumentOrder.From(2).Value;
+
+        var result = documentOrder.ToString();
+
+        Assert.Equal("2", result);
+    }
 }
