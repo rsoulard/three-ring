@@ -20,6 +20,7 @@ The Binder aggregate is the root, the Documents belong to a Binder and cannot ex
 | Name | Type |
 |------|------|
 | Id | `BinderId` |
+| Name | `string` |
 | Status | `BinderStatus` |
 | Documents | Collection of `Documents` |
 | CreatedAt | `DateTime` |
@@ -28,6 +29,7 @@ The Binder aggregate is the root, the Documents belong to a Binder and cannot ex
 
 
 ### Invariants
+- Binders must have a name that is not empty
 - Document order must be contiguous
 - A Binder cannot be composed unless it has at least one page
 - A Binder cannot be modified after composition begins

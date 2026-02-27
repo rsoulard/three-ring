@@ -9,7 +9,7 @@ public sealed class Document
     public DocumentOrder Order { get; } = null!;
     public StorageUri SourceUri { get; } = null!;
     public ContentType MimeType { get; } = null!;
-    public DateTime UploadedAt { get; }
+    public DateTimeOffset UploadedAt { get; }
 
     private Document(DocumentId id, DocumentOrder order, StorageUri sourceUri, ContentType mimeType)
     {
@@ -17,6 +17,8 @@ public sealed class Document
         Order = order;
         SourceUri = sourceUri;
         MimeType = mimeType;
+
+        UploadedAt = DateTimeOffset.UtcNow;
     }
 
     public static Result<Document> Create(DocumentId id, DocumentOrder order, StorageUri sourceUri, ContentType mimeType)
