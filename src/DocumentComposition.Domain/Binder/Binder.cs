@@ -14,9 +14,9 @@ public sealed class Binder : AggregateRoot<BinderId>
     private readonly List<Document> documents = [];
     public IReadOnlyList<Document> Documents => documents.AsReadOnly();
 
-    private Binder(BinderId binderId, string name)
+    private Binder(BinderId id, string name)
     {
-        Id = binderId;
+        Id = id;
         Name = name;
 
         CreatedAt = DateTimeOffset.UtcNow;
