@@ -1,3 +1,4 @@
+using DocumentComposition.Application.Binders;
 using DocumentComposition.Application.Data;
 using DocumentComposition.Infrastructure.Binders;
 using DocumentComposition.Infrastructure.Data;
@@ -25,7 +26,8 @@ public static class ServiceCollectionExtensions
 
         services.AddScoped<IUnitOfWork, EfCoreUnitOfWork<DocumentCompositionDbContext>>();
 
-        services.AddBindersInfrastructure();
+        services.AddBindersApplicationModule()
+            .AddBindersInfrastructureModule();
 
         return services;
     }

@@ -3,9 +3,9 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace DocumentComposition.Infrastructure.Binders;
 
-public static class ServiceCollectionExtensions
+public static class BindersInfrastructureModule
 {
-    public static IServiceCollection AddBindersInfrastructure(this IServiceCollection services)
+    public static IServiceCollection AddBindersInfrastructureModule(this IServiceCollection services)
     {
         services.AddScoped<IBinderRepository, BinderRepository>();
 

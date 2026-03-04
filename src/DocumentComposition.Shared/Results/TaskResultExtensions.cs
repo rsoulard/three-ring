@@ -1,4 +1,7 @@
+using DocumentComposition.Shared.Results;
+
 namespace DocumentComposition.Shared.Results;
+
 public static class TaskResultExtensions
 {
     /// <summary>
