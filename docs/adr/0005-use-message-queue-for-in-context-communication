@@ -1,0 +1,28 @@
+# ADR 0005: Use Message Queue for In Context Communication
+
+## Status
+Accepted
+
+## Context
+ThreeRing makes use of two runtimes that exist within the same bounded context. Those two runtimes need to communicate in order to orchestrate the composition process; the Api needs to instruct the Worker to start and the Worker needs to inform the Api when the final PDF file is available. There is also the consideration of supporting multiple Worker instances at a time.
+
+## Decision
+We will use a message queue to facilitate communication between the Api and the Worker service.
+
+This allows for:
+- Multiple Worker instances
+- Asynchronous communication
+- Bi-directional communication
+
+## Consequences
+### Positive
+- The Api and the Worker communicate across the same surface
+- Multiple Worker instances can exist and can even be hosted on machines other than the one hosting the Api
+
+### Negatives
+- Requires discipline to maintain
+- Adds a small amount of overhead for implementation
+
+## Alternatives Considered
+- ### Internal Api for Worker communication
+- Rejected: Requires having to maintain a second HTTP server and endpoints specifically for internal use

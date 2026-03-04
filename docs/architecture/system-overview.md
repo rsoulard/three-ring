@@ -100,9 +100,10 @@ sequenceDiagram
     W->>S: Download pages
     W->>W: Normalize and compose PDF
     W->>S: Upload final PDF
-    W->>A: POST /internal/binders/{binderId}/complete
+    W->>MQ: Enqueue CompositionCompleted
 
-    A->>MQ: Enqueue CompositionCompleted
+    A->>MQ: Dequeue CompositionCompleted
+    A->>DB: Set Final Output Uri
 
     C->>A: GET /binders/{binderId}
     A-->>C: Final PDF URI
