@@ -1,6 +1,11 @@
-@DocumentComposition.Api_HostAddress = http://localhost:5266
+@Api_HostAddress = http://localhost:5266
 
-GET {{DocumentComposition.Api_HostAddress}}/weatherforecast/
+POST {{Api_HostAddress}}/api/binders/
+Content-Type: application/json
 Accept: application/json
+
+{
+    "Name" : "testBinder"
+}
 
 ###

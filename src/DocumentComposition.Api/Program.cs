@@ -1,3 +1,4 @@
+using DocumentComposition.Api.Binders;
 using DocumentComposition.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,8 @@ builder.Services.AddDocumentComposition(infrastructureOptions =>
 {
     infrastructureOptions.ConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 });
+
+builder.Services.AddTransient<CreateBinderCommandMapper>();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
