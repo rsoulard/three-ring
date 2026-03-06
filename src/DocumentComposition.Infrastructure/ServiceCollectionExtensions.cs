@@ -24,6 +24,8 @@ public static class ServiceCollectionExtensions
             dbOptions.UseSqlite(options.ConnectionString);
         });
 
+        services.AddTransient<MigrationService<DocumentCompositionDbContext>>();
+
         services.AddScoped<IUnitOfWork, EfCoreUnitOfWork<DocumentCompositionDbContext>>();
 
         services.AddBindersApplicationModule()
