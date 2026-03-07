@@ -1,5 +1,6 @@
 using DocumentComposition.Api.Binders;
 using DocumentComposition.Infrastructure;
+using DocumentComposition.Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,5 +30,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.Migrate();
 
 app.Run();
