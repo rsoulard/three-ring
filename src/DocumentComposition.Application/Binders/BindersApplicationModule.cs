@@ -8,6 +8,7 @@ public static class BindersApplicationModule
     public static IServiceCollection AddBindersApplicationModule(this IServiceCollection services)
     {
         services.AddScoped<CreateBinderCommandHandler>();
+        services.AddScoped<BinderIdQueryHandler>();
 
         return services;
     }
