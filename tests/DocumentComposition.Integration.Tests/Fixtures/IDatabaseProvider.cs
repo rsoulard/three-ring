@@ -6,4 +6,5 @@ public interface IDatabaseProvider
     Task StartAsync();
     Task StopAsync();
     Task<Dictionary<string, object?>?> QueryRowAsync(string query, object? parameters = null);
+    Task<List<Dictionary<string, object?>>> QueryRowsAsync(string query, object? parameters = null);
 }

@@ -12,8 +12,7 @@ builder.Services.AddDocumentComposition(infrastructureOptions =>
     infrastructureOptions.ConnectionString = builder.Configuration.GetConnectionString("Default");
 });
 
-builder.Services.AddTransient<CreateBinderCommandMapper>();
-builder.Services.AddTransient<BinderIdQueryMapper>();
+builder.Services.AddBindersApiModule();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();

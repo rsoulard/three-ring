@@ -37,4 +37,20 @@ public class BindersController : ControllerBase
             .BindAsync(handler.HandleAsync)
             .ToActionResult();
     }
+
+    /// <summary>
+    /// Add a document to a binder.
+    /// </summary>
+    /// <param name="handler">The command handler for this operation.</param>
+    /// <param name="mapper">The mapper that turns the request into a command.</param>
+    /// <param name="id">The id of the binder to add the document to.</param>
+    /// <param name="request">The add document parameters.</param>
+    /// <returns></returns>
+    [HttpPost("{id:guid}/add-document")]
+    public async Task<IActionResult> AddDocumentAsync([FromServices] AddDocumentCommandHandler handler, [FromServices] AddDocumentCommandMapper mapper, Guid id, [FromBody] AddDocumentRequest request)
+    {
+        return await mapper.Map(id, request)
+            .BindAsync(handler.HandleAsync)
+            .ToActionResult();
+    }
 }
