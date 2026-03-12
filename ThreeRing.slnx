@@ -12,5 +12,6 @@
     <Project Path="tests/DocumentComposition.Application.Tests/DocumentComposition.Application.Tests.csproj" />
     <Project Path="tests/DocumentComposition.Domain.Tests/DocumentComposition.Domain.Tests.csproj" />
     <Project Path="tests/DocumentComposition.Infrastructure.Tests/DocumentComposition.Infrastructure.Tests.csproj" />
+    <Project Path="tests/DocumentComposition.Integration.Tests/DocumentComposition.Integration.Tests.csproj" />
   </Folder>
 </Solution>

@@ -9,10 +9,11 @@ builder.Services.AddControllers();
 
 builder.Services.AddDocumentComposition(infrastructureOptions =>
 {
-    infrastructureOptions.ConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+    infrastructureOptions.ConnectionString = builder.Configuration.GetConnectionString("Default");
 });
 
 builder.Services.AddTransient<CreateBinderCommandMapper>();
+builder.Services.AddTransient<BinderIdQueryMapper>();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();

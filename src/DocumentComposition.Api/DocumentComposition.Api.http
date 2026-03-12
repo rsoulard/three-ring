@@ -1,4 +1,5 @@
 @Api_HostAddress = http://localhost:5266
+@Existing_Binder = 019cde61-b510-78fa-96f7-a2ecb3ce2980
 
 POST {{Api_HostAddress}}/api/binders/
 Content-Type: application/json
@@ -7,5 +8,11 @@ Accept: application/json
 {
     "Name" : "testBinder"
 }
+
+###
+
+GET {{Api_HostAddress}}/api/binders/{{Existing_Binder}}
+Content-Type: application/json
+Accept: application/json
 
 ###
