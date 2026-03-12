@@ -9,6 +9,7 @@ public static class BindersApplicationModule
     {
         services.AddScoped<CreateBinderCommandHandler>();
         services.AddScoped<BinderIdQueryHandler>();
+        services.AddScoped<AddDocumentCommandHandler>();
 
         return services;
     }

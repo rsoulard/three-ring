@@ -53,7 +53,40 @@ public class SqliteProvider : IDatabaseProvider
             return default;
         }
 
-        return Map(reader);
+        var result = Map(reader);
+
+        await connection.CloseAsync();
+
+        return result;
+    }
+
+    public async Task<List<Dictionary<string, object?>>> QueryRowsAsync(string query, object? parameters = null)
+    {
+        var result = new List<Dictionary<string, object?>>();
+
+        await connection.OpenAsync();
+
+        await using var command = connection.CreateCommand();
+        command.CommandText = query;
+
+        if (parameters is not null)
+        {
+            foreach (var property in parameters.GetType().GetProperties())
+            {
+                command.Parameters.AddWithValue($"@{property.Name}", property.GetValue(parameters) ?? DBNull.Value);
+            }
+        }
+
+        await using var reader = await command.ExecuteReaderAsync();
+
+        while (await reader.ReadAsync())
+        {
+            result.Add(Map(reader));
+        }
+
+        await connection.CloseAsync();
+
+        return result;
     }
 
     private static Dictionary<string, object?> Map(SqliteDataReader reader)

@@ -40,7 +40,7 @@ public class CreateBinderCommandHandlerTests
         await unitOfWork.Received(1).CommitWorkAsync();
 
         Assert.True(result.IsSuccessful);
-        Assert.NotEqual(Guid.Empty, result.Value.Value);
+        Assert.NotEqual(Guid.Empty, result.Value.Id);
     }
 
     [Fact]
